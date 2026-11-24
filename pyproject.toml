@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sql-driver"
+version = "1.0.0"
+description = "Надбудова над sqlite3 за PEP 249 і застосунок «SQL-консоль»"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []           # лише стандартна бібліотека Python
+
+[project.scripts]
+sql-console = "sql_console.app:main"
+
+[tool.setuptools.packages.find]
+include = ["sql_driver*", "sql_console*"]
+
+[tool.setuptools.package-data]
+sql_driver = ["journal/schema.sql"]
